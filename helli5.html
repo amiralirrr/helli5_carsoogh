@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کارسوق‌های حلی ۵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-blur bg1"></div>
+  <div class="bg-blur bg2"></div>
+
+  <header class="topbar">
+    <div class="title-box">
+      <h1>کارسوق‌های حلی ۵</h1>
+      <p>سامانه ثبت نوبت کارسوق‌ها</p>
+    </div>
+
+    <div class="admin-box">
+      <button id="openAdminBtn" class="admin-btn">ورود ادمین</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-card">
+      <h2>به سامانه خوش آمدید</h2>
+      <p>
+        از این بخش می‌توانید کارسوق‌های فعال را ببینید و برای شرکت در آن‌ها نوبت خود را ثبت کنید.
+      </p>
+    </section>
+
+    <section class="workshops-section">
+      <div class="section-title-row">
+        <h2>کارسوق‌های فعال</h2>
+      </div>
+
+      <div id="workshopsList" class="workshops-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal: Admin Login -->
+  <div id="adminModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" id="closeAdminModal">×</button>
+      <h2>ورود ادمین</h2>
+      <p class="hint">برای ورود، رمز را وارد کنید.</p>
+
+      <form id="adminLoginForm">
+        <label for="adminPassword">رمز عبور</label>
+        <input
+          id="adminPassword"
+          type="password"
+          placeholder="********"
+          maxlength="8"
+          required
+        />
+        <button type="submit" class="primary-btn">ورود</button>
+      </form>
+
+      <p id="loginMessage" class="message"></p>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" class="modal hidden">
+    <div class="modal-content large">
+      <button class="close-btn" id="closeAdminPanel">×</button>
+      <h2>پنل ادمین</h2>
+      <p class="hint">اینجا می‌توانید کارسوق جدید ایجاد کنید و ثبت‌نام‌ها را ببینید.</p>
+
+      <div class="admin-grid">
+        <div class="admin-card">
+          <h3>ایجاد کارسوق جدید</h3>
+          <form id="createWorkshopForm">
+            <label for="workshopName">نام کارسوق</label>
+            <input
+              id="workshopName"
+              type="text"
+              placeholder="مثلاً کارسوق ریاضی"
+              required
+            />
+            <button type="submit" class="primary-btn">افزودن کارسوق</button>
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3>فهرست کارسوق‌ها</h3>
+          <div id="adminWorkshopsList" class="admin-workshops-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
